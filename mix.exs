@@ -46,11 +46,11 @@ defmodule SensorPi.MixProject do
       {:nerves_firmware_ssh, "~> 0.4"},
 
       # Dependencies for all targets except :host
-      {:nerves_runtime, "~> 0.6", targets: @all_targets},
+      {:nerves_runtime, "~> 0.6"},
       {:nerves_pack, "~> 0.2", targets: @all_targets},
 
       # Dependencies for specific targets
-      {:nerves_system_rpi3, "~> 1.11.2", runtime: false, targets: :rpi3},
+      {:nerves_system_rpi3, "~> 1.11.1", runtime: false, targets: :rpi3},
       {:nerves_system_dht_rpi3, path: "../dht_rpi3", runtime: false, targets: :dht_rpi3, nerves: [compile: true]},
     ]
   end
