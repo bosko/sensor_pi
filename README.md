@@ -13,6 +13,21 @@ Containers/group.com.docker/settings.json` must be edited and following two line
 
 must be added to `filesharingDirectories`.
 
+Further, build is done here, customized Nerves version is expected to
+be in `../dht_rpi3` folder as is visible in file `mix.exs` in the
+`deps` function where `nerves_system_dht_rpi3` dependency is set.
+
+Basically steps are following
+
+  * In the `dht_rpi3` folder fetch changes from upstream with `git
+    fetch upstream` and merge them to master
+  * In this project in `mix.exs` file adjust versions for
+    `nerves_system_rpi3` if needed
+  * Adjust WiFi `ssid` and `psk` values in `config/target.exs` file
+  * Run `MIX_TARGET=dht_rpi3 mix firmware` to build firmware
+  * Run `MIX_TARGET=dht_rpi3 ./upload.sh <rpi_ip_address>` to upload
+    firmware
+
 ## Targets
 
 Nerves applications produce images for hardware targets based on the
