@@ -55,8 +55,8 @@ config :vintage_net,
          networks: [
            %{
              key_mgmt: :wpa_psk,
-             ssid: "network_ssid",
-             psk: "network_pass",
+             ssid: System.get_env("WIFI_SSID"),
+             psk: System.get_env("WIFI_PSK"),
            }
          ]
        },
