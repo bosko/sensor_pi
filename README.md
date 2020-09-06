@@ -23,8 +23,10 @@ Basically steps are following
     fetch upstream` and merge them to master
   * In this project in `mix.exs` file adjust versions for
     `nerves_system_rpi3` if needed
-  * Run `WIFI_SSID=<wifi_network_name> WIFI_PSK=<wifi_password> MIX_TARGET=dht_rpi3 mix firmware` to build firmware
-  * Run `WIFI_SSID=<wifi_network_name> WIFI_PSK=<wifi_password> MIX_TARGET=dht_rpi3 ./upload.sh <rpi_ip_address>` to upload
+  * Run `WIFI_SSID=<wifi_network_name> WIFI_PSK=<wifi_password>
+    MIX_TARGET=dht_rpi3 mix firmware` to build firmware
+  * Run `WIFI_SSID=<wifi_network_name> WIFI_PSK=<wifi_password>
+    MIX_TARGET=dht_rpi3 ./upload.sh <rpi_ip_address>` to upload
     firmware
 
 ## Targets
