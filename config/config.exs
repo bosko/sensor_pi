@@ -5,6 +5,20 @@
 # is restricted to this project.
 import Config
 
+# When we deploy to a device, we use the "prod" configuration:
+import_config "../../srb_home_center_ui/config/config.exs"
+import_config "../../srb_home_center_ui/config/prod.exs"
+
+config :srb_home_center_ui, SrbHomeCenterUiWeb.Endpoint,
+  # Nerves root filesystem is read-only, so disable the code reloader
+  code_reloader: false,
+  http: [port: 80],
+  # Use compile-time Mix config instead of runtime environment variables
+  load_from_system_env: false,
+  # Start the server since we're running in a release instead of through `mix`
+  server: true,
+  url: [host: "home-center", port: 80]
+
 config :sensor_pi, target: Mix.target()
 
 # Customize non-Elixir parts of the firmware. See

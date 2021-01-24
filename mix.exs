@@ -50,8 +50,10 @@ defmodule SensorPi.MixProject do
       {:nerves_pack, "~> 0.2", targets: @all_targets},
 
       # Dependencies for specific targets
-      {:nerves_system_rpi3, "~> 1.12.1", runtime: false, targets: :rpi3},
+      {:nerves_system_rpi3, "~> 1.13.3", runtime: false, targets: :rpi3},
       {:nerves_system_dht_rpi3, path: "../dht_rpi3", runtime: false, targets: :dht_rpi3, nerves: [compile: true]},
+
+      {:srb_home_center_ui, path: "../srb_home_center_ui"},
     ]
   end
 
