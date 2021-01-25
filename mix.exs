@@ -31,7 +31,7 @@ defmodule SensorPi.MixProject do
   def application do
     [
       mod: {SensorPi.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :inets]
     ]
   end
 
@@ -43,10 +43,9 @@ defmodule SensorPi.MixProject do
       {:shoehorn, "~> 0.7.0"},
       {:ring_logger, "~> 0.8.1"},
       {:toolshed, "~> 0.2.13"},
-      {:nerves_firmware_ssh, "~> 0.4"},
 
       # Dependencies for all targets except :host
-      {:nerves_runtime, "~> 0.11.3"},
+      {:nerves_runtime, "~> 0.11.3", targets: @all_targets},
       {:nerves_pack, "~> 0.4.0", targets: @all_targets},
 
       # Dependencies for specific targets
