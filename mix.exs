@@ -39,7 +39,7 @@ defmodule SensorPi.MixProject do
   defp deps do
     [
       # Dependencies for all targets
-      {:nerves, "~> 1.7.0", runtime: false},
+      {:nerves, "~> 1.7.4", runtime: false},
       {:shoehorn, "~> 0.7.0"},
       {:ring_logger, "~> 0.8.1"},
       {:toolshed, "~> 0.2.13"},
@@ -49,7 +49,7 @@ defmodule SensorPi.MixProject do
       {:nerves_pack, "~> 0.4.0", targets: @all_targets},
 
       # Dependencies for specific targets
-      {:nerves_system_rpi3, "~> 1.13", runtime: false, targets: :rpi3},
+      {:nerves_system_rpi3, "~> 1.15", runtime: false, targets: :rpi},
       {:nerves_system_dht_rpi3, path: "../dht_rpi3", runtime: false, targets: :dht_rpi3, nerves: [compile: true]},
 
       {:srb_home_center_ui, path: "../srb_home_center_ui"},
