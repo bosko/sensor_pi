@@ -38,21 +38,26 @@ defmodule SensorPi.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # Dependencies for all targets
+      # Dependencies for host and target
       {:nerves, "~> 1.7.4", runtime: false},
       {:shoehorn, "~> 0.7.0"},
       {:ring_logger, "~> 0.8.1"},
       {:toolshed, "~> 0.2.13"},
-
-      # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.11.3", targets: @all_targets},
       {:nerves_pack, "~> 0.4.0", targets: @all_targets},
 
+      # Dependencies for all targets except :host
+      {:circuits_uart, "~> 1.3", targets: @all_targets},
+      {:circuits_gpio, "~> 0.4", targets: @all_targets},
+      {:circuits_i2c, "~> 0.3", targets: @all_targets},
+      {:circuits_spi, "~> 0.1", targets: @all_targets},
+      {:ramoops_logger, "~> 0.1", targets: @all_targets},
+
       # Dependencies for specific targets
       {:nerves_system_rpi3, "~> 1.15", runtime: false, targets: :rpi},
-      {:nerves_system_dht_rpi3, path: "../dht_rpi3", runtime: false, targets: :dht_rpi3, nerves: [compile: true]},
-
-      {:srb_home_center_ui, path: "../srb_home_center_ui"},
+      {:nerves_system_dht_rpi3,
+       path: "../dht_rpi3", runtime: false, targets: :dht_rpi3, nerves: [compile: true]},
+      {:srb_home_center_ui, path: "../srb_home_center_ui"}
     ]
   end
 
