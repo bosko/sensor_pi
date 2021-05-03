@@ -52,13 +52,12 @@ config :vintage_net,
            %{
              key_mgmt: :wpa_psk,
              ssid: System.get_env("WIFI_SSID"),
-             psk: System.get_env("WIFI_PSK"),
+             psk: System.get_env("WIFI_PSK")
            }
          ]
        },
-       ipv4: %{method: :dhcp},
-     }
-    }
+       ipv4: %{method: :dhcp}
+     }}
   ]
 
 config :mdns_lite,
